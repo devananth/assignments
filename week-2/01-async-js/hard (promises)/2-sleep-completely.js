@@ -5,6 +5,13 @@
  */
 
 function sleep(milliseconds) {
+  let startTime = Date.now();
+  return new Promise(function (resolve) {
+    while (Date.now() - startTime < milliseconds) {
+      // synchronous func to halts JS thread for n secs
+    }
+    resolve();
+  });
 }
 
 module.exports = sleep;
